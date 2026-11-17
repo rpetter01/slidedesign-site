@@ -147,7 +147,7 @@ footer a { color: var(--ink-2); }
           <span>Get it on the Microsoft Store</span>
         </a>
       </div>
-      <p class="sub store-sub">For Windows 10 and 11. The first module is free.</p>
+      <p class="sub store-sub">For Windows 10 and 11.</p>
     </div>
   </section>
 
@@ -221,7 +221,7 @@ var links = document.querySelectorAll('.store-link'), sub = document.querySelect
 var hasId = /^9[A-Z0-9]{11}$/i.test(STORE_ID), isWin = /Windows NT 1[01]/.test(navigator.userAgent);
 var href = isWin ? 'ms-windows-store://pdp/?PFN=' + PFN : hasId ? 'https://apps.microsoft.com/detail/' + STORE_ID + '?hl=en-us&gl=US&cid=website' : '#';
 links.forEach(function (a) { a.href = href; if (href === '#') a.addEventListener('click', function (e) { e.preventDefault(); }); });
-if (!isWin) sub.textContent = 'Available for Windows 10 and 11. Open this page on your PC to install. The first module is free.';
+if (!isWin) sub.textContent = 'Available for Windows 10 and 11. Open this page on your PC to install.';
 </script>
 </body>
 </html>
