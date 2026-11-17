@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://slidedesign.online/sitemap.xml

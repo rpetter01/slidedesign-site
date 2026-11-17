@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slide Design Course · Master PowerPoint design tools · Slide Academy</title>
+<meta name="description" content="A hands-on slide design course for Windows. Master PowerPoint's design tools by building real slides: shapes, alignment, infographics and animation, with instant feedback. Works offline.">
+<meta property="og:title" content="Slide Design Course · Master PowerPoint design tools">
+<meta property="og:description" content="Master PowerPoint's design tools by building real slides, with instant feedback. Get it on the Microsoft Store.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://slidedesign.online/assets/poster.jpg">
+<meta property="og:url" content="https://slidedesign.online/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://slidedesign.online/">
+<meta name="theme-color" content="#c43e1c">
+<link rel="icon" href="assets/logo.png">
+<style>
+@font-face { font-family: Inter; src: url(assets/Inter-latin-1.woff2) format('woff2'); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: Sora; src: url(assets/Sora-latin-5.woff2) format('woff2'); font-weight: 100 900; font-display: swap; }
+:root { --bg: #fbf7f4; --surface: #fff; --ink: #231815; --ink-2: #4f413b; --ink-3: #85746c; --line: #eadfd8; --brand: #c43e1c; --brand-d: #9c2f14; --brand-soft: #fbe9e4; --accent: #f4a21d; --ok: #0c9a62; --violet: #7a4fd6; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { overflow-x: clip; margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.6 Inter, 'Segoe UI', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+img, video { max-width: 100%; display: block; }
+a { color: inherit; }
+.wrap { width: min(1180px, 100% - 32px); margin: 0 auto; }
+h1, h2, h3 { font-family: Sora, Inter, system-ui, sans-serif; letter-spacing: -.025em; line-height: 1.1; margin: 0; }
+:focus-visible { outline: 3px solid color-mix(in srgb, var(--brand) 55%, transparent); outline-offset: 3px; border-radius: 6px; }
+
+/* top bar */
+.top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+.brand { display: flex; align-items: center; gap: 12px; font: 800 19px Sora, Inter, sans-serif; letter-spacing: -.02em; text-decoration: none; }
+.brand img { width: 40px; height: 40px; border-radius: 10px; }
+.top nav { display: flex; gap: 22px; font-size: 15px; font-weight: 600; color: var(--ink-2); }
+.top nav a { text-decoration: none; } .top nav a:hover { color: var(--brand); }
+
+/* buttons */
+.cta { display: inline-flex; align-items: center; gap: 12px; background: var(--brand); color: #fff; font-weight: 800; font-size: 18px; padding: 15px 26px; border-radius: 14px; text-decoration: none; box-shadow: 0 12px 28px -10px rgba(196, 62, 28, .7); transition: transform .15s, box-shadow .15s, background .15s; }
+.cta:hover { background: var(--brand-d); transform: translateY(-2px); }
+.cta svg { width: 22px; height: 22px; }
+.cta.alt { background: #fff; color: var(--brand-d); box-shadow: 0 10px 26px -12px rgba(60, 25, 10, .35); border: 1px solid var(--line); }
+.cta.alt:hover { background: var(--brand-soft); }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr); gap: clamp(24px, 3vw, 48px); align-items: start; padding: clamp(12px, 2.5vw, 32px) 0 clamp(20px, 3vw, 42px); }
+.eyebrow { display: inline-block; font: 700 12.5px/1 Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--brand); background: var(--brand-soft); padding: 8px 12px; border-radius: 999px; }
+h1 { font-size: clamp(34px, 4vw, 54px); margin: 18px 0 0; font-weight: 800; letter-spacing: -.035em; }
+h1 em { font-style: normal; color: var(--brand); }
+.lead { font-size: clamp(18px, 1.7vw, 21px); color: var(--ink-2); margin: 20px 0 0; max-width: 31em; }
+.facts { display: flex; flex-wrap: wrap; gap: 10px 22px; list-style: none; padding: 0; margin: 22px 0 0; font-weight: 650; font-size: 16px; }
+.facts li::before { content: ''; display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); margin-right: 9px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.sub { font-size: 14px; color: var(--ink-3); font-weight: 600; margin: 14px 0 0; }
+.media { margin-top: clamp(0px, 1vw, 12px); border-radius: 20px; overflow: hidden; box-shadow: 0 30px 70px -24px rgba(90, 30, 10, .55); border: 1px solid rgba(0, 0, 0, .08); aspect-ratio: 16 / 9; background: #14192a; }
+.media video { width: 100%; height: 100%; object-fit: cover; }
+
+/* sections */
+section { padding: clamp(20px, 3vw, 42px) 0; }
+/* banded sections: full-width background behind the centred content */
+.band { position: relative; isolation: isolate; }
+.band::before { content: ''; position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); }
+#how { padding-top: clamp(36px, 4.5vw, 64px); padding-bottom: clamp(36px, 4.5vw, 64px); }
+#how::before { background:
+  radial-gradient(circle at 92% 18%, rgba(244, 162, 29, .28) 0 90px, transparent 91px),
+  radial-gradient(circle at 6% 88%, rgba(196, 62, 28, .16) 0 150px, transparent 151px),
+  linear-gradient(115deg, rgba(196, 62, 28, .06) 0 14%, transparent 14.1%),
+  linear-gradient(180deg, #fde9e1, #fff3e6); }
+#faq { padding-top: clamp(36px, 4.5vw, 64px); padding-bottom: clamp(36px, 4.5vw, 64px); color: #fff; }
+#faq::before { background:
+  radial-gradient(circle at 8% 14%, rgba(244, 162, 29, .22) 0 110px, transparent 111px),
+  radial-gradient(circle at 95% 90%, rgba(255, 107, 74, .30) 0 170px, transparent 171px),
+  linear-gradient(135deg, #171d33, #0f1426); }
+#faq .kicker { color: var(--accent); } #faq h2 { color: #fff; }
+.kicker { font: 700 12.5px/1 Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--brand); }
+h2 { font-size: clamp(30px, 3.6vw, 46px); margin: 12px 0 0; font-weight: 800; }
+.intro { color: var(--ink-2); max-width: 40em; margin: 14px 0 0; font-size: 18px; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 26px; box-shadow: 0 1px 2px rgba(60, 25, 10, .06); }
+.card .n { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; font: 800 18px Sora, sans-serif; color: #fff; background: var(--brand); }
+.card:nth-child(2) .n { background: var(--accent); color: #3a2300; } .card:nth-child(3) .n { background: var(--violet); }
+.card h3 { font-size: 21px; margin: 18px 0 8px; } .card p { margin: 0; color: var(--ink-2); font-size: 16px; }
+
+/* screenshots */
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+.shot { margin: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 24px 50px -28px rgba(90, 30, 10, .5); background: #fff; }
+.shot figcaption { padding: 12px 16px; font-size: 14.5px; color: var(--ink-3); font-weight: 600; border-top: 1px solid var(--line); background: #fff; }
+
+.shot img { width: 100%; height: auto; }
+
+/* modules */
+.mods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+.mod { border-radius: 18px; padding: 26px; border: 1px solid var(--line); background: var(--surface); position: relative; }
+.mod .tag { position: absolute; top: 22px; right: 22px; font: 800 11px/1 Inter, sans-serif; letter-spacing: .1em; padding: 6px 9px; border-radius: 999px; background: var(--ok); color: #fff; }
+.mod.paid .tag { background: var(--violet); }
+.mod h3 { font-size: 22px; margin-bottom: 4px; } .mod .cnt { color: var(--ink-3); font-weight: 600; font-size: 14.5px; }
+.mod ul { margin: 14px 0 0; padding: 0; list-style: none; color: var(--ink-2); font-size: 15.5px; }
+.mod li { padding: 5px 0 5px 22px; position: relative; } .mod li::before { content: ''; position: absolute; left: 2px; top: 14px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.mod.soon .tag { background: var(--accent); color: #3a2300; } .mod.soon p { margin: 14px 0 0; color: var(--ink-2); font-size: 15.5px; line-height: 1.55; }
+
+/* faq */
+.faq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 28px; margin-top: 30px; }
+.faq div { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; }
+.faq h3 { color: var(--ink); font: 700 17px Inter, sans-serif; letter-spacing: 0; margin: 0 0 6px; } .faq p { margin: 0; color: var(--ink-2); font-size: 15.5px; }
+
+.final { text-align: center; background: linear-gradient(135deg, #c43e1c, #9c2f14); color: #fff; border-radius: 28px; padding: clamp(36px, 6vw, 72px) 24px; margin: 20px 0 10px; }
+.final h2 { color: #fff; } .final p { color: #ffd9cc; margin: 14px auto 0; max-width: 32em; }
+.final .cta { background: #fff; color: var(--brand-d); margin-top: 28px; }
+.final .cta:hover { background: #fff3ee; }
+
+footer { padding: 36px 0 48px; font-size: 13.5px; color: var(--ink-3); line-height: 1.6; display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: space-between; }
+footer a { color: var(--ink-2); }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; } .media { order: -1; }
+  .cards, .mods { grid-template-columns: 1fr; } .shots { grid-template-columns: 1fr; }
+  .faq { grid-template-columns: 1fr; } .top nav { display: none; }
+  .cta { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .cta { transition: none; } }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Slide Academy","applicationCategory":"EducationalApplication","operatingSystem":"Windows 10, Windows 11","description":"A hands-on presentation design course: build real slides in a live slide editor with instant feedback. Works offline.","url":"https://slidedesign.online/","image":"https://slidedesign.online/assets/poster.jpg","publisher":{"@type":"Organization","name":"Heren Labs"}}</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#"><img src="assets/logo.png" alt="" width="40" height="40"><span>Slide Academy</span></a>
+    <nav aria-label="Sections"><a href="#how">How it works</a><a href="#course">The course</a><a href="#faq">Questions</a></nav>
+  </header>
+
+  <main>
+  <section class="hero" style="padding-top: 18px">
+    <div>
+      <span class="eyebrow">Slide design course</span>
+      <h1>Master slide design <em>by building it.</em></h1>
+      <p class="lead">A hands-on design course for PowerPoint. Learn its tools and build great-looking slides, step by step, in a PowerPoint-style editor that checks your work on the spot.</p>
+      <ul class="facts"><li>10-module course</li><li>20+ hands-on lessons, and growing</li><li>Works offline</li></ul>
+      <div class="actions">
+        <a class="cta store-link" href="#" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h8.5v8.5H3zM12.5 3H21v8.5h-8.5zM3 12.5h8.5V21H3zM12.5 12.5H21V21h-8.5z"/></svg>
+          <span>Get it on the Microsoft Store</span>
+        </a>
+      </div>
+      <p class="sub store-sub">For Windows 10 and 11. The first module is free.</p>
+    </div>
+    <div class="media">
+      <video autoplay muted loop playsinline preload="auto" poster="assets/poster.jpg" aria-label="Slides built with the techniques taught in the course: a title slide, an animated bar chart and ring gauges">
+        <source src="assets/showcase.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <section id="how" class="band">
+    <span class="kicker">How it works</span>
+    <h2>Not videos to watch. Slides to make.</h2>
+    <p class="intro">Every step gives you a clear task in a PowerPoint-style editor, with the ribbon, Format Shape pane and Animation Pane. Do it, press Check, and see at once whether it worked.</p>
+    <div class="cards">
+      <div class="card"><div class="n">1</div><h3>You build it</h3><p>Insert shapes, type exact sizes, align, group and animate. Nothing is premade: the slide starts empty and you make every piece.</p></div>
+      <div class="card"><div class="n">2</div><h3>It checks your work</h3><p>The app looks at what you actually made, so you get feedback on the result, not on a multiple-choice guess. Stuck? Ask for a hint, or see the answer.</p></div>
+      <div class="card"><div class="n">3</div><h3>You earn your progress</h3><p>XP for every step, daily streaks and levels that keep going as the course grows. Your progress is saved on your PC.</p></div>
+    </div>
+    <div class="shots">
+      <figure class="shot"><img src="assets/shot-gauges.jpg" width="1440" height="900" loading="lazy" alt="A lesson in Slide Academy: instructions on the left, a slide editor with ribbon and Format Shape pane on the right"><figcaption>Instructions on the left, a live editor on the right.</figcaption></figure>
+      <figure class="shot"><img src="assets/shot-fill.jpg" width="1440" height="900" loading="lazy" alt="Fill, outline and transparency lesson with a square selected and the Shape Fill button highlighted"><figcaption>A glowing hint shows where to click.</figcaption></figure>
+      <figure class="shot"><img src="assets/shot-course.jpg" width="1440" height="900" loading="lazy" alt="The course page with modules and lessons"><figcaption>The course page: modules, lessons and progress.</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="course">
+    <span class="kicker">The course</span>
+    <h2>From the first shape to animated infographics.</h2>
+    <p class="intro">Three modules are ready today. The rest of the course is on the way.</p>
+    <div class="mods">
+      <div class="mod"><span class="tag">FREE</span><h3>Basics &amp; fundamentals</h3><div class="cnt">7 lessons</div>
+        <ul><li>A showcase of what you will build</li><li>Select, move, resize and rotate</li><li>Shapes and text</li><li>Duplicate, align and distribute</li><li>Fill, outline and transparency</li><li>Layers and groups, then a capstone slide</li></ul></div>
+      <div class="mod paid"><span class="tag">FULL ACCESS</span><h3>Design tricks</h3><div class="cnt">7 lessons</div>
+        <ul><li>The fan trick: rotate around a pivot</li><li>Patterns and repetition</li><li>Lines, curves and arrows</li><li>Mockups and frames</li><li>Merge Shapes</li><li>Bring it to life, then an animated launch scene</li></ul></div>
+      <div class="mod paid"><span class="tag">FULL ACCESS</span><h3>Infographics</h3><div class="cnt">6 lessons</div>
+        <ul><li>Bar charts from shapes</li><li>Rings and gauges</li><li>Pictograms</li><li>Timelines and process flows</li><li>Animate a bar chart: grow, stagger, reveal</li><li>Animate the gauges: a reusable entrance</li></ul></div>
+      <div class="mod soon"><span class="tag">COMING SOON</span><h3>Imagery</h3><div class="cnt">Lessons coming soon</div><p>Crop, mask, frame and style pictures so photos look designed.</p></div>
+      <div class="mod soon"><span class="tag">COMING SOON</span><h3>Animation basics</h3><div class="cnt">Lessons coming soon</div><p>Entrance, emphasis and exit effects, timing, triggers and the Animation Pane.</p></div>
+      <div class="mod soon"><span class="tag">COMING SOON</span><h3>Motion design</h3><div class="cnt">Lessons coming soon</div><p>Motion paths, Morph and layered movement for slides that feel like video.</p></div>
+      <div class="mod soon"><span class="tag">COMING SOON</span><h3>Colour &amp; depth</h3><div class="cnt">Lessons coming soon</div><p>Palettes, gradients, shadows and glow for slides with real depth.</p></div>
+      <div class="mod soon"><span class="tag">COMING SOON</span><h3>Typography</h3><div class="cnt">Lessons coming soon</div><p>Pairing fonts, hierarchy, spacing and text effects that look professional.</p></div>
+      <div class="mod soon"><span class="tag">COMING SOON</span><h3>Design eye</h3><div class="cnt">Lessons coming soon</div><p>Composition, contrast and white space: seeing what makes a slide work.</p></div>
+      <div class="mod soon"><span class="tag">COMING SOON</span><h3>Studio projects</h3><div class="cnt">Lessons coming soon</div><p>Full, jaw-dropping slides built start to finish.</p></div>
+    </div>
+  </section>
+
+  <section id="faq" class="band">
+    <span class="kicker">Questions</span>
+    <h2>Good to know</h2>
+    <div class="faq">
+      <div><h3>What does it cost?</h3><p>The first module is free, with no account needed. Full access to the other modules is a monthly subscription through the Microsoft Store, and you can cancel it at any time in your Microsoft account. The price is shown in the Store.</p></div>
+      <div><h3>Do I need PowerPoint?</h3><p>No. You practise in a PowerPoint-style editor built into the app, so nothing else is needed. The tools and techniques are the ones you use in PowerPoint.</p></div>
+      <div><h3>Does it work offline?</h3><p>Yes. The lessons run on your PC. A connection is only used to check your subscription.</p></div>
+      <div><h3>What happens to my progress if I stop subscribing?</h3><p>It stays on your PC. Only the modules that need full access are locked until you subscribe again.</p></div>
+    </div>
+  </section>
+
+  <div class="final">
+    <h2>Make your next slide the best one yet.</h2>
+    <p>Start with the free module and build your first slide in minutes.</p>
+    <a class="cta store-link" href="#" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h8.5v8.5H3zM12.5 3H21v8.5h-8.5zM3 12.5h8.5V21H3zM12.5 12.5H21V21h-8.5z"/></svg><span>Get it on the Microsoft Store</span></a>
+  </div>
+  </main>
+
+  <footer>
+    <span>&copy; Heren Labs</span>
+    <span>Slide Academy is an independent course and is not affiliated with or endorsed by Microsoft. PowerPoint is a trademark of Microsoft Corporation.</span>
+  </footer>
+</div>
+<script>
+/* Package Family Name of the app (Identity in the MSIX manifest + the publisher hash, same publisher as Spreadsheet Academy).
+   On Windows it opens the Store listing without needing the Store ID. Verify in Partner Center > Product identity > Package family name. */
+var PFN = 'HerenLabs.SlideAcademy-LearnPresentationSkills_4rr9weehh6kfm';
+/* The 12-character Store ID of the APP (not of the add-on) is only needed for the web link used on non-Windows devices. */
+var STORE_ID = '__STORE_ID__';
+var links = document.querySelectorAll('.store-link'), sub = document.querySelector('.store-sub');
+var hasId = /^9[A-Z0-9]{11}$/i.test(STORE_ID), isWin = /Windows NT 1[01]/.test(navigator.userAgent);
+var href = isWin ? 'ms-windows-store://pdp/?PFN=' + PFN : hasId ? 'https://apps.microsoft.com/detail/' + STORE_ID + '?hl=en-us&gl=US&cid=website' : '#';
+links.forEach(function (a) { a.href = href; if (href === '#') a.addEventListener('click', function (e) { e.preventDefault(); }); });
+if (!isWin) sub.textContent = 'Available for Windows 10 and 11. Open this page on your PC to install. The first module is free.';
+</script>
+</body>
+</html>
